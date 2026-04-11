@@ -102,7 +102,7 @@ public class LoginTest {
         System.out.println("Expected: " + expResult + ", Actual: " + result);
         assertEquals(expResult, result);
         assertFalse(result);
-        System.out.println("✓ Test PASSED\n");
+        System.out.println("Test PASSED\n");
     }
 
     // ==================== CELL PHONE NUMBER VALIDATION TESTS ====================
@@ -124,7 +124,7 @@ public class LoginTest {
         System.out.println("Expected: " + expResult + ", Actual: " + result);
         assertEquals(expResult, result);
         assertTrue(result);
-        System.out.println("✓ Test PASSED\n");
+        System.out.println("Test PASSED\n");
     }
     
     /**
@@ -144,7 +144,7 @@ public class LoginTest {
         System.out.println("Expected: " + expResult + ", Actual: " + result);
         assertEquals(expResult, result);
         assertFalse(result);
-        System.out.println("✓ Test PASSED\n");
+        System.out.println("Test PASSED\n");
     }
 
     // ==================== REGISTRATION TESTS ====================
