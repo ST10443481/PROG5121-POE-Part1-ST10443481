@@ -291,7 +291,7 @@ public class RegistrationLogin {
      */
     private static void showWelcomeScreen(Login login) {
         String welcomeMessage = 
-            "WELCOME TO YOUR ACCOUNT \n" +
+            "WELCOME\n" +
             "User Information:\n" +
             "─────────────────────────────────────────────────\n" +
             "Username:        " + login.getUsername() + "\n" +
