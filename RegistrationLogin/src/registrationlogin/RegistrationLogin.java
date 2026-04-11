@@ -108,7 +108,7 @@ public class RegistrationLogin {
                     }
                 } else {
                     JOptionPane.showMessageDialog(null,
-                        "✗ Maximum login attempts reached.\n\n" +
+                        "Maximum login attempts reached.\n\n" +
                         "Access Denied. Please try again later.",
                         "Access Denied",
                         JOptionPane.ERROR_MESSAGE);
@@ -128,9 +128,7 @@ public class RegistrationLogin {
         
         // Registration instructions
         JOptionPane.showMessageDialog(null,
-            "═══════════════════════════════════════\n" +
-            "         USER REGISTRATION\n" +
-            "═══════════════════════════════════════\n\n" +
+            "USER REGISTRATION\n" +
             "Please provide the following information:\n\n" +
             "Username Requirements:\n" +
             "  • Must contain an underscore (_)\n" +
