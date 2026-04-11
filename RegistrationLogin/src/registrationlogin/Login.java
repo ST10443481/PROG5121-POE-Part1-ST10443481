@@ -6,8 +6,6 @@ import java.util.regex.Pattern;
  * Login class that handles user registration and authentication
  * Provides methods for validating username, password, and cell phone number
  * as well as registering and authenticating users.
- * 
- * @author Student
  */
 public class Login {
     
