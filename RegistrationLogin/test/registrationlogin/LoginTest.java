@@ -1,9 +1,11 @@
 package registrationlogin;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 /**
  * Unit tests for the Login class.
@@ -20,7 +22,32 @@ public class LoginTest {
     public LoginTest() {
     }
     
-  
+    @BeforeClass
+    public static void setUpClass() {
+        System.out.println("========================================");
+        System.out.println("Starting Login Class Unit Tests");
+        System.out.println("========================================\n");
+    }
+    
+    @AfterClass
+    public static void tearDownClass() {
+        System.out.println("\n========================================");
+        System.out.println("All Login Tests Completed");
+        System.out.println("========================================");
+    }
+    
+    @Before
+    public void setUp() {
+        login = new Login();
+        System.out.println("Test Setup: New Login instance created");
+    }
+    
+    @After
+    public void tearDown() {
+        login = null;
+        System.out.println("Test Teardown: Login instance cleared\n");
+    }
+
     // ==================== USERNAME VALIDATION TESTS ====================
     
     /**
@@ -40,7 +67,7 @@ public class LoginTest {
         System.out.println("Expected: " + expResult + ", Actual: " + result);
         assertEquals(expResult, result);
         assertTrue(result);
-        System.out.println("✓ Test PASSED\n");
+        System.out.println("TEST PASSED\n");
     }
     
     /**
@@ -60,7 +87,7 @@ public class LoginTest {
         System.out.println("Expected: " + expResult + ", Actual: " + result);
         assertEquals(expResult, result);
         assertFalse(result);
-        System.out.println("✓ Test PASSED\n");
+        System.out.println("TEST PASSED\n");
     }
 
     // ==================== PASSWORD COMPLEXITY TESTS ====================
@@ -82,7 +109,7 @@ public class LoginTest {
         System.out.println("Expected: " + expResult + ", Actual: " + result);
         assertEquals(expResult, result);
         assertTrue(result);
-        System.out.println("✓ Test PASSED\n");
+        System.out.println("TEST PASSED\n");
     }
     
     /**
@@ -102,7 +129,7 @@ public class LoginTest {
         System.out.println("Expected: " + expResult + ", Actual: " + result);
         assertEquals(expResult, result);
         assertFalse(result);
-        System.out.println("Test PASSED\n");
+        System.out.println("TEST PASSED\n");
     }
 
     // ==================== CELL PHONE NUMBER VALIDATION TESTS ====================
@@ -124,7 +151,7 @@ public class LoginTest {
         System.out.println("Expected: " + expResult + ", Actual: " + result);
         assertEquals(expResult, result);
         assertTrue(result);
-        System.out.println("Test PASSED\n");
+        System.out.println("TEST PASSED\n");
     }
     
     /**
@@ -144,15 +171,13 @@ public class LoginTest {
         System.out.println("Expected: " + expResult + ", Actual: " + result);
         assertEquals(expResult, result);
         assertFalse(result);
-        System.out.println("Test PASSED\n");
+        System.out.println("TEST PASSED\n");
     }
 
     // ==================== REGISTRATION TESTS ====================
     
     /**
      * Test of registerUser method - Username incorrectly formatted
-     * Test Data: username="kyle!!!!!!!", password="Ch&sec@ke99!", cell="+27838968976"
-     * Expected: Username error message
      */
     @Test
     public void testRegisterUser_UsernameIncorrectlyFormatted() {
@@ -171,13 +196,11 @@ public class LoginTest {
         System.out.println("Expected: \"" + expResult + "\"");
         System.out.println("Actual: \"" + result + "\"");
         assertEquals(expResult, result);
-        System.out.println("✓ Test PASSED\n");
+        System.out.println("TEST PASSED\n");
     }
 
     /**
      * Test of registerUser method - Password does not meet complexity requirements
-     * Test Data: username="kyl_1", password="password", cell="+27838968976"
-     * Expected: Password error message
      */
     @Test
     public void testRegisterUser_PasswordDoesNotMeetComplexity() {
@@ -196,13 +219,11 @@ public class LoginTest {
         System.out.println("Expected: \"" + expResult + "\"");
         System.out.println("Actual: \"" + result + "\"");
         assertEquals(expResult, result);
-        System.out.println("✓ Test PASSED\n");
+        System.out.println("TEST PASSED\n");
     }
 
     /**
      * Test of registerUser method - Cell phone number incorrectly formatted
-     * Test Data: username="kyl_1", password="Ch&sec@ke99!", cell="08966553"
-     * Expected: Cell phone error message
      */
     @Test
     public void testRegisterUser_CellPhoneIncorrectlyFormatted() {
@@ -221,13 +242,11 @@ public class LoginTest {
         System.out.println("Expected: \"" + expResult + "\"");
         System.out.println("Actual: \"" + result + "\"");
         assertEquals(expResult, result);
-        System.out.println("✓ Test PASSED\n");
+        System.out.println("TEST PASSED\n");
     }
 
     /**
      * Test of registerUser method - Successful registration
-     * Test Data: username="kyl_1", password="Ch&sec@ke99!", cell="+27838968976"
-     * Expected: Success message
      */
     @Test
     public void testRegisterUser_Successful() {
@@ -246,21 +265,18 @@ public class LoginTest {
         System.out.println("Expected: \"" + expResult + "\"");
         System.out.println("Actual: \"" + result + "\"");
         assertEquals(expResult, result);
-        System.out.println("✓ Test PASSED\n");
+        System.out.println("TEST PASSED\n");
     }
 
     // ==================== LOGIN AUTHENTICATION TESTS ====================
     
     /**
      * Test of loginUser method - Successful login
-     * Test Data: Registered user with correct credentials
-     * Expected: true
      */
     @Test
     public void testLoginUser_Successful() {
         System.out.println("TEST: loginUser - Successful Login");
         
-        // First register a user
         login.registerUser("kyl_1", "Ch&sec@ke99!", "+27838968976", "John", "Doe");
         System.out.println("  - Registered test user: kyl_1");
         System.out.println("  - Attempting login with correct credentials");
@@ -271,19 +287,16 @@ public class LoginTest {
         System.out.println("Expected: " + expResult + ", Actual: " + result);
         assertEquals(expResult, result);
         assertTrue(result);
-        System.out.println("✓ Test PASSED\n");
+        System.out.println("TEST PASSED\n");
     }
 
     /**
      * Test of loginUser method - Failed login
-     * Test Data: Registered user with incorrect credentials
-     * Expected: false
      */
     @Test
     public void testLoginUser_Failed() {
         System.out.println("TEST: loginUser - Failed Login");
         
-        // First register a user
         login.registerUser("kyl_1", "Ch&sec@ke99!", "+27838968976", "John", "Doe");
         System.out.println("  - Registered test user: kyl_1");
         System.out.println("  - Attempting login with incorrect credentials");
@@ -294,21 +307,18 @@ public class LoginTest {
         System.out.println("Expected: " + expResult + ", Actual: " + result);
         assertEquals(expResult, result);
         assertFalse(result);
-        System.out.println("✓ Test PASSED\n");
+        System.out.println("TEST PASSED\n");
     }
 
     // ==================== LOGIN STATUS MESSAGE TESTS ====================
     
     /**
      * Test of returnLoginStatus method - Successful login message
-     * Test Data: Registered user with correct credentials
-     * Expected: Welcome message with user's full name
      */
     @Test
     public void testReturnLoginStatus_Successful() {
         System.out.println("TEST: returnLoginStatus - Successful Login Message");
         
-        // First register a user
         login.registerUser("kyl_1", "Ch&sec@ke99!", "+27838968976", "John", "Doe");
         System.out.println("  - Registered test user: kyl_1 (John Doe)");
         
@@ -318,19 +328,16 @@ public class LoginTest {
         System.out.println("Expected: \"" + expResult + "\"");
         System.out.println("Actual: \"" + result + "\"");
         assertEquals(expResult, result);
-        System.out.println("✓ Test PASSED\n");
+        System.out.println("TEST PASSED\n");
     }
 
     /**
      * Test of returnLoginStatus method - Failed login message
-     * Test Data: Registered user with incorrect credentials
-     * Expected: Error message for incorrect username/password
      */
     @Test
     public void testReturnLoginStatus_Failed() {
         System.out.println("TEST: returnLoginStatus - Failed Login Message");
         
-        // First register a user
         login.registerUser("kyl_1", "Ch&sec@ke99!", "+27838968976", "John", "Doe");
         System.out.println("  - Registered test user: kyl_1 (John Doe)");
         System.out.println("  - Attempting login with wrong credentials");
@@ -341,6 +348,6 @@ public class LoginTest {
         System.out.println("Expected: \"" + expResult + "\"");
         System.out.println("Actual: \"" + result + "\"");
         assertEquals(expResult, result);
-        System.out.println("✓ Test PASSED\n");
+        System.out.println("TEST PASSED\n");
     }
 }

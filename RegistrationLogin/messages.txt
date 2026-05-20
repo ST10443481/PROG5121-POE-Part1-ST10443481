@@ -1,0 +1,6 @@
+2868873865|1|28:1:HITHANDO|+27123456789|hi its thando|stored
+7185948947|2|71:2:HIMARY|+27725393678|hi thando its mary|sent
+7987248798|1|79:1:HIDISTINCTION|+27123456789|hi maam can i please have a distinction?|sent
+0665356536|1|06:1:HIENOUGH|+27123456789|hi maam is this good enough?|sent
+7512649585|1|75:1:TESTETSTSTETSTTSTTSTTTESTETSTSTETSTTSTTSTT|+27987654321|testetststetsttsttstt|stored
+4531409975|1|45:1:FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF|+27826738370|ffffffffffff fffffffffffffffffff fffffffffffffffffffffffff|sent
